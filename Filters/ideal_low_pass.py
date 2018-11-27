@@ -1,6 +1,6 @@
 import numpy as np
 
-def IdealLowPass:
+class IdealLowPass():
     def __init__(self, shape, cutoff):
         self.p = shape[0]
         self.q = shape[1]
@@ -22,4 +22,4 @@ def IdealLowPass:
         return dist
 
     def get_filter(self):
-        return self.filter  
+        return self.filter
