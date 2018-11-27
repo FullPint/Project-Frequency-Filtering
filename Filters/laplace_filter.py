@@ -15,3 +15,6 @@ class Laplace:
             h[u][v] = 1 + (np.square(u - self.p) + np.square(v - self.q))
             index_iterator.iternext()
         return filter
+
+    def get_laplace(self):
+        return self.filter
