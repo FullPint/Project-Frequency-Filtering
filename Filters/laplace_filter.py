@@ -1,5 +1,4 @@
 import numpy as np
-import cv2
 
 class Laplace:
     def __init__(self, shape):
