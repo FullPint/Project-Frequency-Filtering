@@ -22,4 +22,4 @@ def IdealLowPass:
         return dist
 
     def get_filter(self):
-        return self.filter
+        return self.filter  
