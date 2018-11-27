@@ -7,7 +7,8 @@ class FFT_DIP:
         if(self._power_of_two(n)):
             vector = self.cooleytukey(vector)
         else:
-            vector = self.bluestein(vector)
+            vector = np.fft.fft(vector)
+            # vector = self.bluestein(vector)
         return vector
 
     def ifft(self, vector):
@@ -16,7 +17,11 @@ class FFT_DIP:
         if(self._power_of_two(n)):
             vector = self.cooleytukey(vector, inverse=True)
         else:
+            vector = np.fft.ifft(vector)
+            """
+            # need to completr the algorithm
             vector = self.bluestein(vector, inverse=True)
+            """
         return vector.astype(int)
 
     def fft2d(self, matrix):
@@ -55,10 +60,14 @@ class FFT_DIP:
         transformed = [even_fft[i] + tp[i] for i in range(N//2)] + [even_fft[i] - tp[i] for i in range(N//2)]
         return np.asarray(transformed)
 
+    """
+    need to complete the implementation having issues with
+    how to keep size, in order to avoid zero padding
     def bluestein(self, vector, inverse=False):
 
         transformed_vector = np.covolve()
         return vector
+    """
 
     def _power_of_two(self, n):
         return (n > 0 and n & (n - 1) == 0)
