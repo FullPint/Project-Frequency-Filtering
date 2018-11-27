@@ -8,7 +8,10 @@ class HighBoost:
         self.hp = np.array(hp)
         self.filter = self.build_filter()
 
-    def build_filter():
+    def build_filter(self):
         h = np.zeroes((p,q))
         h = (self.A - 1) + hp
         return h
+
+    def get_high_boodt(self):
+        return self.filter
